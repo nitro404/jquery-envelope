@@ -1,6 +1,6 @@
 {
   "name": "jquery-envelope",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A wrapper for jQuery's AJAX function to allow for simpler RESTful API transactions.",
   "main": "dist/envelope.js",
   "scripts": {
