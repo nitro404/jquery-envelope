@@ -138,7 +138,7 @@ envelope.request = function(method, path, data, query, options, callback) {
 	newOptions.dataType = "json";
 	newOptions.json = true;
 
-	if(newOptions.timeout !== null && !Number.isInteger(defaultOptions.timeout)) {
+	if(newOptions.timeout !== null && !Number.isInteger(newOptions.timeout)) {
 		newOptions.timeout = defaultOptions.timeout;
 	}
 
@@ -165,7 +165,7 @@ envelope.request = function(method, path, data, query, options, callback) {
 	}
 
 	if(isUpload) {
-		delete newOptions.headers["Content-Type"];
+		newOptions.headers["Content-Type"] = undefined;
 	}
 	else if(utilities.isEmptyString(newOptions.headers["Content-Type"])) {
 		newOptions.headers["Content-Type"] = "application/json";
