@@ -1,0 +1,35 @@
+{
+  "name": "jquery-envelope",
+  "version": "1.0.0",
+  "description": "A wrapper for jQuery's AJAX function to allow for simpler RESTful API transactions.",
+  "main": "dist/envelope.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nitro404/jquery-envelope.git"
+  },
+  "keywords": [
+    "jquery",
+    "ajax",
+    "ajaj",
+    "request",
+    "envelope",
+    "json",
+    "rest",
+    "api"
+  ],
+  "author": {
+    "name": "Kevin Scroggins"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nitro404/jquery-envelope/issues"
+  },
+  "homepage": "https://github.com/nitro404/jquery-envelope#readme",
+  "peerDependencies": {
+    "extra-utilities": "^1.1.2",
+    "jquery": "^3.3.1"
+  }
+}
