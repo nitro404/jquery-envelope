@@ -102,7 +102,7 @@ envelope.request = function(method, path, data, query, options, callback) {
 	}
 
 	if(utilities.isEmptyString(method)) {
-		return callback(new Error("Missing or invalid method type: \"" + method + "\"."));
+		return callback(new Error("Missing or invalid method type."));
 	}
 
 	var formattedMethod = method.toUpperCase().trim();
