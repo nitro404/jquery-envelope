@@ -14,7 +14,7 @@
 
 	var envelope = { };
 
-	var validMethods = ["HEAD", "GET", "POST", "PUT", "PATCH", "DELETE"]
+	var validMethods = ["HEAD", "GET", "POST", "PUT", "PATCH", "DELETE"];
 
 	var defaultOptions = {
 		baseUrl: null,
@@ -122,7 +122,7 @@
 
 		var validMethod = false;
 
-		for(var i=0;i<validMethods.length;i++) {
+		for(var i = 0; i < validMethods.length; i++) {
 			if(formattedMethod === validMethods[i]) {
 				validMethod = true;
 				break;
@@ -182,25 +182,25 @@
 			newOptions.headers["Content-Type"] = "application/json";
 		}
 
-		if(utilities.isEmptyString(newOptions.headers["Accepts"])) {
-			newOptions.headers["Accepts"] = "application/json";
+		if(utilities.isEmptyString(newOptions.headers.Accepts)) {
+			newOptions.headers.Accepts = "application/json";
 		}
 
 		if(utilities.isValid(newOptions.authorization)) {
 			if(utilities.isNonEmptyString(newOptions.authorization)) {
-				if(utilities.isNonEmptyString(newOptions.headers["Authorization"])) {
+				if(utilities.isNonEmptyString(newOptions.headers.Authorization)) {
 					console.error("Authorization specified in header data is being overridden by authorization at root level of options.");
 				}
 
-				newOptions.headers["Authorization"] = newOptions.authorization;
+				newOptions.headers.Authorization = newOptions.authorization;
 			}
 
 			delete newOptions.authorization;
 		}
 
-		if(utilities.isEmptyString(newOptions.headers["Authorization"])) {
+		if(utilities.isEmptyString(newOptions.headers.Authorization)) {
 			if(utilities.isNonEmptyString(defaultOptions.authorization)) {
-				newOptions.headers["Authorization"] = defaultOptions.authorization;
+				newOptions.headers.Authorization = defaultOptions.authorization;
 			}
 		}
 
@@ -220,7 +220,7 @@
 			return callback(error, null, response, textStatus);
 		};
 
-		$.ajax(newOptions);
+		return $.ajax(newOptions);
 	};
 
 	envelope.head = function(path, data, query, options, callback) {
