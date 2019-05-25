@@ -217,7 +217,22 @@
 				return callback(utilities.createError("Sever connection failed!", 500), null, response, textStatus);
 			}
 
-			return callback(error, null, response, textStatus);
+			var formattedError = null;
+
+			if(error) {
+				if(utilities.isObject(response.responseJSON)) {
+					formattedError = response.responseJSON;
+
+					if(utilities.isObject(response.responseJSON.error)) {
+						formattedError = response.responseJSON.error;
+					}
+				}
+				else {
+					formattedError = utilities.createError(error, response.status);
+				}
+			}
+
+			return callback(formattedError, null, response, textStatus);
 		};
 
 		return $.ajax(newOptions);
