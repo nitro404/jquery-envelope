@@ -6,6 +6,8 @@
 [![Known Vulnerabilities][vulnerabilities-image]][vulnerabilities-url]
 [![Downloads][npm-downloads-image]][npm-url]
 
+**This module has been deprecated, use [xhr-envelope][xhr-envelope-url] instead.**
+
 A wrapper for jQuery's AJAX function to allow for simpler RESTful API transactions.
 
 ## Client-Side Usage
@@ -46,6 +48,8 @@ or
 ```bash
 gulp build
 ```
+
+[xhr-envelope-url]: https://github.com/nitro404/xhr-envelope
 
 [npm-url]: https://www.npmjs.com/package/jquery-envelope
 [npm-version-image]: https://img.shields.io/npm/v/jquery-envelope.svg
